@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>שירותי קצין בטיחות בתעבורה במיקור חוץ | לופו ניהול ציי רכב</title>
+  <meta
+    name="description"
+    content="לופו ניהול ציי רכב מספקת שירותי קצין בטיחות בתעבורה, ניהול וייעוץ לציי רכב וליווי רגולטורי לחברות הייטק, פארמה ופיננסים עם ניסיון של מעל 25 שנה."
+  />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#10233f" />
+  <style>
+    :root{
+      --bg:#f5f8fc;
+      --surface:#ffffff;
+      --surface-2:#edf3fa;
+      --text:#17283d;
+      --muted:#43566f;
+      --primary:#10233f;
+      --primary-2:#17365f;
+      --accent:#c8e000;
+      --accent-2:#dff15a;
+      --line:#d6e0ec;
+      --shadow:0 12px 40px rgba(16,35,63,.10);
+      --radius:22px;
+      --container:1240px;
+      --header-h:86px;
+      --focus:#0f62fe;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: "Heebo", "Assistant", "Rubik", Arial, sans-serif;
+      font-size:18px;
+      line-height:1.8;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(200,224,0,.12), transparent 22%),
+        linear-gradient(180deg, #f8fbff 0%, #f2f6fb 100%);
+    }
+
+    a{
+      color:var(--primary-2);
+      text-decoration:none;
+    }
+
+    a:hover{
+      text-decoration:underline;
+    }
+
+    a:focus-visible,
+    button:focus-visible{
+      outline:3px solid var(--focus);
+      outline-offset:3px;
+      border-radius:10px;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+      border-radius:18px;
+    }
+
+    .skip-link{
+      position:absolute;
+      right:12px;
+      top:-60px;
+      background:#fff;
+      color:#000;
+      padding:12px 16px;
+      z-index:1000;
+      border-radius:12px;
+      box-shadow:var(--shadow);
+      font-size:18px;
+    }
+
+    .skip-link:focus{
+      top:12px;
+    }
+
+    .container{
+      width:min(var(--container), calc(100% - 32px));
+      margin-inline:auto;
+    }
+
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:999;
+      backdrop-filter:blur(12px);
+      background:rgba(255,255,255,.92);
+      border-bottom:1px solid rgba(214,224,236,.95);
+    }
+
+    .header-inner{
+      min-height:var(--header-h);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      min-width:0;
+    }
+
+    .brand-mark{
+      width:48px;
+      height:48px;
+      border-radius:14px;
+      background:linear-gradient(135deg, var(--primary) 0%, #284e80 100%);
+      color:#fff;
+      display:grid;
+      place-items:center;
+      font-weight:800;
+      font-size:20px;
+      box-shadow:0 10px 24px rgba(16,35,63,.18);
+      flex-shrink:0;
+    }
+
+    .brand-text{
+      min-width:0;
+    }
+
+    .brand-text strong{
+      display:block;
+      font-size:20px;
+      line-height:1.3;
+      color:var(--primary);
+    }
+
+    .brand-text span{
+      display:block;
+      font-size:18px;
+      line-height:1.5;
+      color:var(--muted);
+    }
+
+    .desktop-nav{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+
+    .desktop-nav a{
+      font-size:18px;
+      color:var(--primary);
+      padding:10px 14px;
+      border-radius:12px;
+      font-weight:500;
+    }
+
+    .desktop-nav a:hover{
+      background:var(--surface-2);
+      text-decoration:none;
+    }
+
+    .header-cta{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      flex-shrink:0;
+    }
+
+    .phone-link{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:52px;
+      padding:0 18px;
+      background:var(--primary);
+      color:#fff;
+      border-radius:16px;
+      font-size:18px;
+      font-weight:700;
+      box-shadow:0 12px 22px rgba(16,35,63,.18);
+    }
+
+    .phone-link:hover{
+      background:#0d1d35;
+      text-decoration:none;
+    }
+
+    .burger{
+      display:none;
+      width:52px;
+      height:52px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:#fff;
+      cursor:pointer;
+      padding:0;
+      position:relative;
+    }
+
+    .burger span{
+      position:absolute;
+      right:13px;
+      left:13px;
+      height:3px;
+      background:var(--primary);
+      border-radius:999px;
+      transition:.25s ease;
+    }
+
+    .burger span:nth-child(1){top:16px}
+    .burger span:nth-child(2){top:24px}
+    .burger span:nth-child(3){top:32px}
+
+    .burger[aria-expanded="true"] span:nth-child(1){
+      transform:translateY(8px) rotate(45deg);
+    }
+
+    .burger[aria-expanded="true"] span:nth-child(2){
+      opacity:0;
+    }
+
+    .burger[aria-expanded="true"] span:nth-child(3){
+      transform:translateY(-8px) rotate(-45deg);
+    }
+
+    .mobile-panel{
+      display:none;
+      border-top:1px solid var(--line);
+      background:#fff;
+    }
+
+    .mobile-panel.open{
+      display:block;
+    }
+
+    .mobile-panel .mobile-nav{
+      display:flex;
+      flex-direction:column;
+      padding:14px 0 18px;
+      gap:8px;
+    }
+
+    .mobile-panel a{
+      padding:12px 6px;
+      font-size:18px;
+      color:var(--primary);
+      font-weight:600;
+    }
+
+    .hero{
+      padding:48px 0 28px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:28px;
+      align-items:stretch;
+    }
+
+    .hero-copy{
+      background:linear-gradient(180deg, rgba(255,255,255,.95) 0%, rgba(245,249,255,.95) 100%);
+      border:1px solid rgba(214,224,236,.95);
+      box-shadow:var(--shadow);
+      border-radius:32px;
+      padding:34px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero-copy::after{
+      content:"";
+      position:absolute;
+      inset:auto auto -60px -60px;
+      width:180px;
+      height:180px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(200,224,0,.18) 0%, rgba(200,224,0,0) 70%);
+      pointer-events:none;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      background:#eef5da;
+      color:#304100;
+      border-radius:999px;
+      font-size:18px;
+      font-weight:700;
+      margin-bottom:18px;
+    }
+
+    h1,h2,h3,h4{
+      margin:0 0 14px;
+      line-height:1.25;
+      color:var(--primary);
+    }
+
+    h1{font-size:46px}
+    h2{font-size:34px}
+    h3{font-size:26px}
+    h4{font-size:21px}
+
+    p, li{
+      font-size:18px;
+      margin:0 0 14px;
+      color:var(--text);
+    }
+
+    .hero-copy p.lead{
+      font-size:20px;
+      color:var(--muted);
+      max-width:66ch;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:22px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:54px;
+      padding:0 20px;
+      border-radius:16px;
+      border:1px solid transparent;
+      font-size:18px;
+      font-weight:700;
+      transition:.2s ease;
+    }
+
+    .btn-primary{
+      background:var(--primary);
+      color:#fff;
+      box-shadow:0 12px 22px rgba(16,35,63,.18);
+    }
+
+    .btn-primary:hover{
+      background:#0c1b31;
+      text-decoration:none;
+      transform:translateY(-1px);
+    }
+
+    .btn-secondary{
+      background:#fff;
+      color:var(--primary);
+      border-color:var(--line);
+    }
+
+    .btn-secondary:hover{
+      background:var(--surface-2);
+      text-decoration:none;
+    }
+
+    .hero-stats{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:14px;
+      margin-top:24px;
+    }
+
+    .stat-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:18px;
+    }
+
+    .stat-card strong{
+      display:block;
+      font-size:28px;
+      color:var(--primary);
+      line-height:1.2;
+      margin-bottom:6px;
+    }
+
+    .stat-card span{
+      display:block;
+      font-size:18px;
+      color:var(--muted);
+    }
+
+    .hero-media{
+      display:grid;
+      gap:16px;
+      align-content:start;
+    }
+
+    .hero-media .main-photo{
+      overflow:hidden;
+      border-radius:32px;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(214,224,236,.95);
+      background:#fff;
+    }
+
+    .hero-media .sub-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+
+    .hero-media figure{
+      margin:0;
+    }
+
+    .hero-media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    section{
+      padding:32px 0;
+      scroll-margin-top:110px;
+    }
+
+    .section-head{
+      max-width:880px;
+      margin-bottom:22px;
+    }
+
+    .section-head p{
+      color:var(--muted);
+      font-size:19px;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      gap:18px;
+    }
+
+    .card{
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:24px;
+      box-shadow:var(--shadow);
+      height:100%;
+    }
+
+    .card p:last-child,
+    .card ul:last-child{
+      margin-bottom:0;
+    }
+
+    .icon-badge{
+      width:52px;
+      height:52px;
+      border-radius:16px;
+      background:linear-gradient(135deg, #eef5da 0%, #f8fbe7 100%);
+      color:#304100;
+      display:grid;
+      place-items:center;
+      font-size:22px;
+      margin-bottom:16px;
+      border:1px solid #dce6b1;
+    }
+
+    .alt-section{
+      background:linear-gradient(180deg, rgba(255,255,255,.55) 0%, rgba(237,243,250,.85) 100%);
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+
+    .content-grid{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:22px;
+      align-items:start;
+    }
+
+    .feature-list{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:grid;
+      gap:14px;
+    }
+
+    .feature-list li{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:16px 18px;
+      box-shadow:0 8px 22px rgba(16,35,63,.06);
+    }
+
+    .feature-list li::before{
+      content:"✓";
+      flex-shrink:0;
+      width:30px;
+      height:30px;
+      display:grid;
+      place-items:center;
+      border-radius:999px;
+      background:#eef5da;
+      color:#304100;
+      font-weight:800;
+      margin-top:2px;
+    }
+
+    .photo-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:14px;
+      box-shadow:var(--shadow);
+    }
+
+    .highlight-band{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      gap:16px;
+    }
+
+    .highlight{
+      background:linear-gradient(180deg, #10233f 0%, #16365e 100%);
+      color:#fff;
+      border-radius:22px;
+      padding:24px;
+      min-height:100%;
+      box-shadow:0 14px 32px rgba(16,35,63,.20);
+    }
+
+    .highlight h3,
+    .highlight p{
+      color:#fff;
+    }
+
+    .service-columns{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:18px;
+    }
+
+    .service-box{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:24px;
+      box-shadow:var(--shadow);
+    }
+
+    .service-box ul{
+      padding:0;
+      margin:0;
+      list-style:none;
+    }
+
+    .service-box li{
+      padding-right:0;
+      margin-bottom:10px;
+      color:var(--text);
+    }
+
+    .service-box li::before{
+      content:"— ";
+      color:var(--primary);
+      font-weight:700;
+    }
+
+    .quote-box{
+      background:linear-gradient(135deg, rgba(200,224,0,.14) 0%, rgba(255,255,255,.95) 100%);
+      border:1px solid #dce6b1;
+      border-radius:28px;
+      padding:26px;
+      box-shadow:var(--shadow);
+    }
+
+    .quote-box p:last-child{
+      margin-bottom:0;
+    }
+
+    .contact-strip{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      flex-wrap:wrap;
+      background:linear-gradient(180deg, #0f233f 0%, #17365f 100%);
+      color:#fff;
+      border-radius:30px;
+      padding:28px;
+      box-shadow:0 14px 34px rgba(16,35,63,.22);
+    }
+
+    .contact-strip h2,
+    .contact-strip p{
+      color:#fff;
+    }
+
+    .contact-strip .btn-secondary{
+      background:#fff;
+      color:var(--primary);
+      border:none;
+    }
+
+    .site-footer{
+      margin-top:26px;
+      padding:28px 0 38px;
+      background:#0f1d33;
+      color:#e9eef6;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.25fr .75fr;
+      gap:26px;
+      align-items:start;
+    }
+
+    .site-footer h3,
+    .site-footer p,
+    .site-footer a,
+    .site-footer li{
+      color:#e9eef6;
+    }
+
+    .footer-meta{
+      margin-top:18px;
+      padding-top:18px;
+      border-top:1px solid rgba(255,255,255,.14);
+    }
+
+    .footer-note{
+      color:#d5ddeb;
+      font-size:18px;
+    }
+
+    .footer-list{
+      list-style:none;
+      margin:0;
+      padding:0;
+      display:grid;
+      gap:8px;
+    }
+
+    .visually-hidden{
+      position:absolute !important;
+      width:1px;height:1px;
+      padding:0;margin:-1px;
+      overflow:hidden;clip:rect(0,0,0,0);
+      white-space:nowrap;border:0;
+    }
+
+    @media (max-width: 1100px){
+      .desktop-nav{display:none}
+      .burger{display:block}
+      .hero-grid,
+      .content-grid,
+      .footer-grid,
+      .service-columns,
+      .cards,
+      .highlight-band{
+        grid-template-columns:1fr;
+      }
+      .hero-media .sub-grid{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media (max-width: 820px){
+      :root{ --header-h:76px; }
+      h1{font-size:34px}
+      h2{font-size:29px}
+      h3{font-size:24px}
+      .header-cta .phone-link{
+        display:none;
+      }
+      .hero{
+        padding-top:24px;
+      }
+      .hero-copy{
+        padding:24px;
+        border-radius:24px;
+      }
+      .hero-media .sub-grid{
+        grid-template-columns:1fr;
+      }
+      .hero-stats{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width: 560px){
+      body, p, li, a, span, label, input, button{
+        font-size:18px;
+      }
+      .container{
+        width:min(var(--container), calc(100% - 20px));
+      }
+      .brand-text span{
+        display:none;
+      }
+      .btn,
+      .phone-link{
+        width:100%;
+      }
+      .contact-strip{
+        padding:22px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      html{scroll-behavior:auto}
+      *{transition:none !important; animation:none !important}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content" title="דלג לתוכן הראשי">דלג לתוכן הראשי</a>
+
+  <header class="site-header" aria-label="כותרת עליונה">
+    <div class="container">
+      <div class="header-inner">
+        <div class="brand" aria-label="לופו ניהול ציי רכב">
+          <div class="brand-mark" aria-hidden="true">ל</div>
+          <div class="brand-text">
+            <strong>לופו ניהול ציי רכב</strong>
+            <span>שירותי קצין בטיחות בתעבורה, ניהול וייעוץ לציי רכב</span>
+          </div>
+        </div>
+
+        <nav class="desktop-nav" aria-label="תפריט ראשי">
+          <a href="#hero" title="מעבר לאזור הפתיחה">ראשי</a>
+          <a href="#about" title="מעבר לאזור על השירות">על השירות</a>
+          <a href="#advantages" title="מעבר לאזור היתרונות">היתרונות</a>
+          <a href="#services" title="מעבר לאזור השירותים">השירותים</a>
+          <a href="#why-lupuz" title="מעבר לאזור למה לופו">למה לופו</a>
+          <a href="#industries" title="מעבר לאזור ההתאמה לארגונים">התאמה לארגונים</a>
+          <a href="#contact" title="מעבר לאזור יצירת קשר">יצירת קשר</a>
+        </nav>
+
+        <div class="header-cta">
+          <a class="phone-link" href="tel:097662733" title="חייגו ללופו ניהול ציי רכב">09-766-2733</a>
+          <button
+            class="burger"
+            type="button"
+            aria-expanded="false"
+            aria-controls="mobilePanel"
+            aria-label="פתיחת תפריט"
+            title="פתיחת תפריט ניווט"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+
+      <div id="mobilePanel" class="mobile-panel" hidden>
+        <nav class="mobile-nav" aria-label="תפריט מובייל">
+          <a href="#hero" title="מעבר לאזור הפתיחה">ראשי</a>
+          <a href="#about" title="מעבר לאזור על השירות">על השירות</a>
+          <a href="#advantages" title="מעבר לאזור היתרונות">היתרונות</a>
+          <a href="#services" title="מעבר לאזור השירותים">השירותים</a>
+          <a href="#why-lupuz" title="מעבר לאזור למה לופו">למה לופו</a>
+          <a href="#industries" title="מעבר לאזור ההתאמה לארגונים">התאמה לארגונים</a>
+          <a href="#contact" title="מעבר לאזור יצירת קשר">יצירת קשר</a>
+          <a href="https://www.lupuz.co.il/" title="שירותי קצין בטיחות בתעבורה" target="_blank" rel="noopener">שירותי קצין בטיחות בתעבורה</a>
+          <a href="tel:097662733" title="חייגו ללופו ניהול ציי רכב">09-766-2733</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow">פתרון מקצועי לארגונים עם צי רכב</div>
+            <h1 id="hero-title">שירותי קצין בטיחות בתעבורה במיקור חוץ לארגונים שדורשים יותר מסימון וי</h1>
+            <p class="lead">
+              לופו ניהול ציי רכב מעניקה לארגונים מעטפת מקצועית של שירותי קצין בטיחות בתעבורה, ניהול וייעוץ לציי רכב וליווי רגולטורי מתמשך,
+              מתוך הבנה עמוקה של עבודה מול הנהלה, עובדים, ספקים, ליסינג, תחזוקה ודרישות החוק. זהו שירות שמתאים לחברות שמבקשות שליטה,
+              רציפות, סדר תפעולי ויד מקצועית יציבה שמנהלת את התחום לאורך זמן.
+            </p>
+            <p>
+              עבור חברות הייטק, פארמה, פיננסים וארגונים נוספים שבהם הדיוק חשוב לא פחות מהשירות, ניהול צי רכב אינו תחום שולי. הוא משפיע על בטיחות העובדים,
+              על רמת החשיפה הרגולטורית, על סדרי העבודה, על תיאום בין מחלקות ועל איכות קבלת ההחלטות. לכן שירותי קצין בטיחות בתעבורה בלופו בנויים
+              בגישה מסודרת, שירותית וקלאסית: ליווי שוטף, בקרה, תיעוד, שיקול דעת מקצועי וניהול המשימות שמסביב כדי לאפשר לארגון להישאר ממוקד בעשייה שלו.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="https://www.lupuz.co.il/" title="שירותי קצין בטיחות בתעבורה" target="_blank" rel="noopener">שירותי קצין בטיחות בתעבורה</a>
+              <a class="btn btn-secondary" href="#contact" title="מעבר לאזור יצירת קשר">לשיחה עם לופו</a>
+            </div>
+
+            <div class="hero-stats" aria-label="נתונים מרכזיים">
+              <div class="stat-card">
+                <strong>25+ שנה</strong>
+                <span>ותק מצטבר בניהול ובטיחות ציי רכב</span>
+              </div>
+              <div class="stat-card">
+                <strong>רציפות מלאה</strong>
+                <span>שירות יציב עם מעטפת ניהולית מאחוריו</span>
+              </div>
+              <div class="stat-card">
+                <strong>מיקור חוץ חכם</strong>
+                <span>בלי דלת מסתובבת ובלי להכביד על הארגון</span>
+              </div>
+              <div class="stat-card">
+                <strong>מומחיות פרטיות</strong>
+                <span>התמקדות משמעותית בתחום הרכב הפרטי בארגונים</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-media" aria-label="תמונות נבחרות">
+            <figure class="main-photo">
+              <img src="chatgpt-310326-1.png" alt="קצין בטיחות בתעבורה מוסר מפתח לעובדת ליד רכב חברה בחניון ארגוני" />
+            </figure>
+            <div class="sub-grid">
+              <figure class="photo-card">
+                <img src="chatgpt-310326-3.jpg" alt="קצין בטיחות בתעבורה בפגישה מקצועית עם מנהל צי רכב ליד מסמכים ורכבי חברה" />
+              </figure>
+              <figure class="photo-card">
+                <img src="chatgpt-310326-4.jpg" alt="קצין בטיחות בתעבורה מבצע בקרה ותיעוד מול צי רכבים חונה בחניון ארגוני" />
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="about-title">שירות שמתאים לארגון שמבין שניהול צי רכב דורש מומחיות, זמינות ואחריות</h2>
+          <p>
+            שירותי קצין בטיחות בתעבורה אינם רק חובה רגולטורית. בארגון פעיל, עם עובדים, נהגים, רכבים, ספקים ולוחות זמנים,
+            מדובר במרכיב תפעולי בעל משמעות רחבה. קצין בטיחות בתעבורה נוגע בכשירות, במשמעת, בבקרה, בתיעוד, בהדרכות,
+            בממשק מול הנהלה ובמניעת מצבים שיוצרים חוסר סדר או סיכון מיותר.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="icon-badge" aria-hidden="true">01</div>
+            <h3>מיקור חוץ שמתנהל כמו פונקציה ארגונית אמיתית</h3>
+            <p>
+              לופו מציעה שירותי קצין בטיחות בתעבורה במיקור חוץ באופן שמאפשר לארגון לקבל גורם מקצועי פעיל, נוכח ומדויק,
+              ללא הצורך לבנות מערך פנימי כבד. זהו פתרון שמתאים לארגונים שרוצים סטנדרט גבוה, אך גם גמישות, יעילות ושליטה תקציבית.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon-badge" aria-hidden="true">02</div>
+            <h3>ליווי רגולטורי עם הבנה תפעולית</h3>
+            <p>
+              השירות אינו מסתכם רק בעמידה בדרישות. הוא כולל הסתכלות רחבה על ההתנהלות בפועל: מצב צי הרכב, נהלים, כשירות,
+              משמעת, חוזים, תקשורת מול בעלי תפקידים ויצירת התאמה בין מה שנדרש לבין מה שקורה בשטח.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon-badge" aria-hidden="true">03</div>
+            <h3>נוכחות מקצועית שמרגיעה הנהלה</h3>
+            <p>
+              כאשר יש כתובת מקצועית קבועה, מסודרת וזמינה, קל יותר לנהל את התחום בשקט. לופו פועלת מתוך סדר, שקיפות ותיאום,
+              כך שהנהלה, משאבי אנוש, כספים ותפעול מקבלים תמונה ברורה ועבודה זורמת יותר.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon-badge" aria-hidden="true">04</div>
+            <h3>גישה שמתאימה לחברות מתקדמות</h3>
+            <p>
+              ארגונים בתחומי הייטק, פארמה ופיננסים מצפים לרמה גבוהה של שירות, סדר ושיקול דעת. לכן הדגש בלופו הוא לא רק על עצם הנוכחות,
+              אלא על איכות הניהול, רמת הבקרה, היכולת לתקשר עם הנהלה והבנה של סביבת עבודה עסקית מתקדמת.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="advantages" class="alt-section" aria-labelledby="advantages-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="advantages-title">הנקודות שעושות את ההבדל עבור ארגון שלא מחפש פתרון זמני</h2>
+          <p>
+            בדף הזה ניתן מקום מיוחד לנושאים המהותיים באמת: רצף תעסוקתי, צוות ניהול מאחורי השירות, ותק, והתמקצעות אמיתית בתחום הרכב הפרטי.
+            אלו לא סעיפים צדדיים, אלא הבסיס לשירות יציב שנשען על ניסיון, אחריות ומבנה מקצועי נכון.
+          </p>
+        </div>
+
+        <div class="highlight-band">
+          <article class="highlight">
+            <h3>רצף תעסוקתי של קציני הבטיחות ולא דלת מסתובבת</h3>
+            <p>
+              אחד היתרונות המשמעותיים ביותר עבור ארגון הוא יציבות. שירותי קצין בטיחות בתעבורה צריכים להישען על היכרות מתמשכת עם הארגון,
+              עם הנהלים, עם האנשים ועם דפוסי העבודה. כאשר יש רצף תעסוקתי ולא תחלופה בלתי פוסקת, נבנה ידע אמיתי, יש פחות אובדן מידע,
+              והארגון נהנה משירות בוגר, מדויק ויעיל יותר.
+            </p>
+          </article>
+
+          <article class="highlight">
+            <h3>צוות ניהול מאחורי השירות</h3>
+            <p>
+              מאחורי השירות עומדת מעטפת ניהולית, ולא רק אדם אחד שפועל לבד. המשמעות היא חשיבה, בקרה, גיבוי, סדרי עבודה ותמיכה מקצועית
+              שמאפשרים רציפות גם בתקופות עמוסות, בשינויים פנימיים או כאשר הארגון נדרש למענה מהיר. זהו הבדל מהותי בין שירות נקודתי לבין מערך אמיתי.
+            </p>
+          </article>
+
+          <article class="highlight">
+            <h3>ותק של 25 שנה בתחום</h3>
+            <p>
+              ניסיון מצטבר של יותר מ־25 שנה מביא איתו פרופורציות, שיקול דעת והיכרות עמוקה עם השטח. לא רק עם התקנות והחוק,
+              אלא גם עם האתגרים היומיומיים של חברות שמנהלות צי רכב, עובדות מול ספקים, מפעילות נהגים וצריכות לנהל תהליך מסודר לאורך זמן.
+            </p>
+          </article>
+
+          <article class="highlight">
+            <h3>מומחיות בתחום הרכב הפרטי</h3>
+            <p>
+              בלופו יש הבנה חזקה במיוחד של עולם הרכב הפרטי בתוך ארגונים. עבור חברות שבהן רוב הפעילות נשענת על רכבים פרטיים לעובדים,
+              רכבי תפקיד או רכבי חברה, חשוב לעבוד עם גוף שמכיר לעומק את הצרכים, הדקויות והאתגרים של תחום זה ולא מטפל בו כאגב שירות.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="services-title">מה כולל השירות בפועל</h2>
+          <p>
+            מעטפת השירות של לופו נבנית כך שתיתן מענה אמיתי לארגון: גם ברמה הרגולטורית וגם ברמה הניהולית. המטרה היא לא רק לעמוד בדרישות,
+            אלא לייצר ניהול מסודר, שקוף ויעיל יותר של התחום כולו.
+          </p>
+        </div>
+
+        <div class="service-columns">
+          <article class="service-box">
+            <h3>שירותי קצין בטיחות בתעבורה</h3>
+            <ul>
+              <li>ניהול אחריות קצין בטיחות בתעבורה בהתאם לדרישות החוק והתקנות.</li>
+              <li>פיקוח בטיחותי שוטף על צי הרכב, מעקב ליקויים ותיעוד סטטוסים.</li>
+              <li>בדיקת כשירות נהגים ורכבים ומתן דגש על בקרה מתמשכת ולא טיפול נקודתי בלבד.</li>
+              <li>הדרכות נהגים ויישום נהלי בטיחות ברמה פרקטית שמתחברת לעבודה היומיומית.</li>
+              <li>תיאום, מעקב וסדרי עבודה מול גורמים פנימיים וחיצוניים בארגון.</li>
+              <li>ליווי הנהלה בתהליכים הקשורים לדרישות רגולטוריות ולהחלטות בתחום צי הרכב.</li>
+            </ul>
+          </article>
+
+          <article class="service-box">
+            <h3>ניהול וייעוץ לציי רכב</h3>
+            <ul>
+              <li>ייעוץ תפעולי וניהולי לציי רכב בהיקפים שונים, מחברות קטנות ועד ארגונים גדולים.</li>
+              <li>בחינת תהליכים, סדרי עבודה, חוזים, התקשרויות וספקים מעולם הליסינג, הביטוח והמוסכים.</li>
+              <li>איתור נקודות חיכוך, כפילויות, סיכונים או חוסר יעילות בניהול השוטף.</li>
+              <li>שיפור תהליכי בקרה ודיווח להנהלה כדי לייצר תמונה ברורה ואחראית יותר.</li>
+              <li>התאמת מבנה השירות למורכבות הארגון, להיקף הרכבים ולצורך בזמינות שוטפת.</li>
+              <li>ייעוץ לציים בחברות הייטק, פארמה ופיננסים שבהן נדרש סטנדרט שירות וניהול גבוה במיוחד.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="why-lupuz" class="alt-section" aria-labelledby="why-lupuz-title">
+      <div class="container">
+        <div class="content-grid">
+          <div>
+            <div class="section-head">
+              <h2 id="why-lupuz-title">למה ארגונים בוחרים בלופו</h2>
+              <p>
+                משום שהם לא מחפשים רק לעמוד בחובה. הם מחפשים דרך לנהל את התחום נכון. שירותי קצין בטיחות בתעבורה בלופו
+                נבנו מתוך הבנה שהארגון צריך כתובת מקצועית, ברורה ונעימה לעבודה, עם יכולת להשתלב בתוך המערכת הקיימת ולא להכביד עליה.
+              </p>
+            </div>
+
+            <ul class="feature-list">
+              <li>מעטפת שירות שמחברת בין בטיחות, תפעול, דיווח, נהלים וייעוץ ניהולי.</li>
+              <li>התנהלות שמדברת בשפה של הנהלה ולא רק בשפה של חובה רגולטורית.</li>
+              <li>שירות רציף עם חשיבה מערכתית, סדר ותיאום בין המחלקות השונות בארגון.</li>
+              <li>מומחיות רלוונטית במיוחד לעולם הרכב הפרטי בתוך חברות וארגונים.</li>
+              <li>גיבוי של צוות ניהול מאחור, ולא עבודה מבודדת ללא מעטפת.</li>
+              <li>גישה קלאסית, עניינית ושירותית שמתאימה לסביבת עבודה עסקית מתקדמת.</li>
+            </ul>
+          </div>
+
+          <aside class="quote-box" aria-label="תוכן משלים">
+            <h3>שירות שאמור להרגיש כמו שלוחה מקצועית של הארגון</h3>
+            <p>
+              זה בדיוק הכיוון. כאשר שירותי קצין בטיחות בתעבורה מבוצעים נכון, התחושה היא לא של גורם חיצוני שבא “לטפל בנושא”,
+              אלא של פונקציה מקצועית שמשתלבת במבנה הקיים של הארגון, מכירה את הצרכים, מדברת עם האנשים הנכונים,
+              יודעת לייצר סדר ומסייעת להנהלה לקבל החלטות על בסיס תמונה מלאה.
+            </p>
+            <p>
+              זהו הערך האמיתי של מיקור חוץ איכותי: לא רק חיסכון, אלא ניהול טוב יותר של התחום כולו.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="industries" aria-labelledby="industries-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="industries-title">מותאם במיוחד לארגונים בתחומי הייטק, פארמה ופיננסים</h2>
+          <p>
+            בארגונים כאלה קיימת חשיבות גבוהה לדיוק, לבקרה, לניהול תהליכים ולחוויית שירות מקצועית. לכן לופו מתאימה את שיטת העבודה
+            לארגונים שמצפים לסטנדרט גבוה, תקשורת טובה וחשיבה מערכתית. ניהול צי רכב בחברות מסוג זה דורש שילוב בין הבנת החוק,
+            משמעת תפעולית ויכולת לעבוד בהרמוניה עם גורמים ניהוליים שונים.
+          </p>
+        </div>
+
+        <div class="content-grid">
+          <article class="card">
+            <h3>מה חשוב לארגונים מתקדמים</h3>
+            <p>
+              ארגון אינו רוצה להקדיש זמן יקר לרדיפה אחרי משימות שלא נוהלו נכון. הוא רוצה לקבל דיווח מסודר, טיפול אחראי,
+              ליווי רציף ויכולת לדעת שיש מי שמחזיק את התחום. עבור חברות שבהן עובדים נעים בין תפקידים, אתרים ופעילות אינטנסיבית,
+              ניהול צי רכב חייב להיות חלק ממבנה ארגוני מסודר ולא אוסף של פעולות מזדמנות.
+            </p>
+            <p>
+              כאן נכנס הערך של לופו: שירותי קצין בטיחות בתעבורה עם ראייה רחבה, זמינות, סדר ותודעת שירות שמתאימה לעולמות העסקיים
+              שבהם האיכות נמדדת בפרטים הקטנים וביכולת לשמור על רמה אחידה לאורך זמן.
+            </p>
+          </article>
+
+          <div class="photo-card">
+            <img src="chatgpt-310326-1.jpg" alt="קצין בטיחות בתעבורה ועובדת חברה במעמד מסירת מפתח ליד רכב חברה" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact-strip">
+          <div>
+            <h2 id="contact-title">לופו ניהול ציי רכב</h2>
+            <p>
+              שירותי קצין בטיחות בתעבורה, ניהול וייעוץ לציי רכב, ליווי רגולטורי והשמה לארגונים המבקשים לעבוד עם גוף מנוסה, יציב ומקצועי.
+            </p>
+            <p><strong>טלפון:</strong> 09-766-2733</p>
+          </div>
+          <div style="display:flex; gap:14px; flex-wrap:wrap;">
+            <a class="btn btn-secondary" href="tel:097662733" title="חייגו ללופו ניהול ציי רכב">חייגו עכשיו</a>
+            <a class="btn btn-primary" href="https://www.lupuz.co.il/" title="שירותי קצין בטיחות בתעבורה" target="_blank" rel="noopener">מעבר לאתר לופו</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" aria-label="פוטר האתר">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>פרטיות, שקיפות ונגישות</h3>
+          <p class="footer-note">
+            אנו מכבדים את פרטיות המשתמשים באתר זה. דף הנחיתה אינו כולל טפסי השארת פרטים ואינו אוסף מידע אישי באופן ישיר.
+            ייתכן ונעשה שימוש בכלי סטטיסטיקה וניתוח תנועה (כגון cookies) לצורך שיפור חוויית המשתמש.
+          </p>
+          <p class="footer-note">
+            האתר מאוחסן ומופעל באמצעות פלטפורמת github, וייתכן כי נתונים טכניים נאספים בהתאם למדיניות הפלטפורמה.
+            ניתן לעיין במדיניות הפרטיות של github בקישור הבא.
+          </p>
+          <p class="footer-note">
+            <a
+              href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
+              target="_blank"
+              rel="noopener"
+              title="מעבר למדיניות הפרטיות של GitHub"
+            >מדיניות הפרטיות של GitHub</a>
+          </p>
+
+          <div class="footer-meta">
+            <p class="footer-note">
+              נבנה עם היררכיית כותרות, קישורי עוגן, ALT לתמונות, TITLE לקישורים, גודל טקסט מינימלי של 18px וניגודיות משופרת.
+            </p>
+            <p class="footer-note">
+              <a title="נבנה על ידי פרוסייטס" href="https://prosites.co.il/">נבנה על ידי פרוסייטס</a>
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <h3>פרטי קשר</h3>
+          <ul class="footer-list">
+            <li>טלפון: <a href="tel:097662733" title="חייגו ללופו ניהול ציי רכב">09-766-2733</a></li>
+            <li>כתובת: התע"ש 18, כפר סבא</li>
+            <li><a href="https://www.lupuz.co.il/" title="שירותי קצין בטיחות בתעבורה" target="_blank" rel="noopener">שירותי קצין בטיחות בתעבורה</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const burger = document.querySelector('.burger');
+      const panel = document.getElementById('mobilePanel');
+      const mobileLinks = panel ? panel.querySelectorAll('a') : [];
+
+      if (burger && panel) {
+        burger.addEventListener('click', function () {
+          const expanded = burger.getAttribute('aria-expanded') === 'true';
+          burger.setAttribute('aria-expanded', String(!expanded));
+          panel.hidden = expanded;
+          panel.classList.toggle('open', !expanded);
+        });
+
+        mobileLinks.forEach(link => {
+          link.addEventListener('click', function () {
+            burger.setAttribute('aria-expanded', 'false');
+            panel.hidden = true;
+            panel.classList.remove('open');
+          });
+        });
+
+        window.addEventListener('resize', function () {
+          if (window.innerWidth > 1100) {
+            burger.setAttribute('aria-expanded', 'false');
+            panel.hidden = true;
+            panel.classList.remove('open');
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
